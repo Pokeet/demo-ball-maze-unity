@@ -9,6 +9,13 @@ public class SphereControls : MonoBehaviour {
 
     private Rigidbody body;
 
+    private float xInput;
+    private float yInput;
+
+    private bool isPressingJump;
+
+    private bool isOnGround;
+
 	// Use this for initialization
 	void Start () {
         body = GetComponent<Rigidbody>();
@@ -16,17 +23,35 @@ public class SphereControls : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        yInput = Input.GetAxis("Vertical");
+        xInput = Input.GetAxis("Horizontal");
 
-        float verticalInput = Input.GetAxis("Vertical");
-        float horizontalInput = Input.GetAxis("Horizontal");
+        isPressingJump = (Input.GetButton("Jump"));
+    }
 
-        body.AddForce(Vector3.forward * inputStrength * verticalInput);
-        body.AddForce(Vector3.right * inputStrength * horizontalInput);
+    private void FixedUpdate()
+    {
+        body.AddForce(Vector3.forward * inputStrength * yInput);
+        body.AddForce(Vector3.right * inputStrength * xInput);
 
-        if (Input.GetButtonDown("Jump"))
+        if (isPressingJump && isOnGround)
         {
             body.AddForce(Vector3.up * jumpStrength);
         }
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        isOnGround = true;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        isOnGround = true;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        isOnGround = false;
     }
 }
