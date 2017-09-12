@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -40,5 +41,20 @@ public class GameManager : MonoBehaviour {
     void OnSphereReachGoal()
     {
         cameraFollow.StopFollow();
+
+        Invoke("LoadNextLevel", 2);
+    }
+
+    void LoadNextLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        Scene nextScene = SceneManager.GetSceneByBuildIndex(nextSceneIndex);
+
+        if (nextScene != null)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
     }
 }
