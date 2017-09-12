@@ -8,6 +8,9 @@ public class SphereControls : MonoBehaviour {
     public float jumpStrength = 500.0f;
     public float finalJumpStrength = 5000;
 
+    public delegate void OnGoalReachedDelegate();
+    public OnGoalReachedDelegate OnGoalReached;
+
     private Rigidbody body;
 
     private float xInput;
@@ -61,6 +64,11 @@ public class SphereControls : MonoBehaviour {
         if (other.gameObject.layer == LayerMask.NameToLayer("goal"))
         {
             body.AddForce(Vector3.up * finalJumpStrength);
+
+            if (OnGoalReached != null)
+            {
+                OnGoalReached();
+            }
         }
     }
 }

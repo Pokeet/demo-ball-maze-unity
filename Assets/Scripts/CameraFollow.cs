@@ -10,9 +10,11 @@ public class CameraFollow : MonoBehaviour {
 
     public float cameraLag;
 
+    private bool follow;
+
 	// Use this for initialization
 	void Start () {
-		
+        follow = true;
 	}
 	
 	// Update is called once per frame
@@ -20,10 +22,17 @@ public class CameraFollow : MonoBehaviour {
 
         transform.LookAt(target);
 
-        Vector3 targetPosition = target.position + targetOffset;
+        if (follow)
+        {
+            Vector3 targetPosition = target.position + targetOffset;
+            Vector3 nextPosition = transform.position + (targetPosition - transform.position) * cameraLag;
+            transform.position = nextPosition;
+        }
 
-        Vector3 nextPosition = transform.position + (targetPosition - transform.position) * cameraLag;
-
-        transform.position = nextPosition;
 	}
+
+    public void StopFollow()
+    {
+        follow = false;
+    }
 }
