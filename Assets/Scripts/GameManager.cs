@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
 
     public Transform spawnPoint;
 
+    public float deathY = -500;
+
     private SphereControls sphereControls;
     private CameraFollow cameraFollow;
 
@@ -35,7 +37,11 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (currentSphere.transform.position.y < -100)
+        {
+            Destroy(currentSphere);
+            SpawnSphere();
+        }
 	}
 
     void OnSphereReachGoal()
@@ -57,4 +63,5 @@ public class GameManager : MonoBehaviour {
             SceneManager.LoadScene(nextSceneIndex);
         }
     }
+
 }
