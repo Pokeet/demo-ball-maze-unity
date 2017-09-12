@@ -6,6 +6,7 @@ public class SphereControls : MonoBehaviour {
 
     public float inputStrength = 10.0f;
     public float jumpStrength = 500.0f;
+    public float finalJumpStrength = 5000;
 
     private Rigidbody body;
 
@@ -53,5 +54,13 @@ public class SphereControls : MonoBehaviour {
     private void OnCollisionExit(Collision collision)
     {
         isOnGround = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("goal"))
+        {
+            body.AddForce(Vector3.up * finalJumpStrength);
+        }
     }
 }

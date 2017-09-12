@@ -209,6 +209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0253ba2617d51b748949e3ae83f60d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 1608835308}
+  targetOffset: {x: 0, y: 2, z: -5}
+  cameraLag: 0.5
 --- !u!1 &397304236
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 397304238}
   - component: {fileID: 397304237}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "arriv\xE9e"
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -232,7 +235,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 397304236}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -474,7 +477,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!23 &1608835305
@@ -554,6 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputStrength: 10
   jumpStrength: 300
+  finalJumpStrength: 3000
 --- !u!1 &1749869906
 GameObject:
   m_ObjectHideFlags: 0
