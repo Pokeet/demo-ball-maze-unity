@@ -67,6 +67,7 @@ public class SphereControls : MonoBehaviour {
 
             if (OnGoalReached != null)
             {
+                Debug.Log("yolo");
                 OnGoalReached();
             }
         }
