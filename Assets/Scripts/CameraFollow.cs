@@ -8,6 +8,8 @@ public class CameraFollow : MonoBehaviour {
 
     public Vector3 targetOffset;
 
+    public float cameraLag;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -18,7 +20,10 @@ public class CameraFollow : MonoBehaviour {
 
         transform.LookAt(target);
 
-        transform.position = target.position + targetOffset;
+        Vector3 targetPosition = target.position + targetOffset;
 
+        Vector3 nextPosition = transform.position + (targetPosition - transform.position) * cameraLag;
+
+        transform.position = nextPosition;
 	}
 }
