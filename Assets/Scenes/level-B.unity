@@ -108,47 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &397304236
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 397304238}
-  - component: {fileID: 397304237}
-  m_Layer: 8
-  m_Name: "arriv\xE9e"
-  m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &397304237
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 397304236}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &397304238
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 397304236}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.07, y: -3.96, z: 88}
-  m_LocalScale: {x: 5.741405, y: 3.1782813, z: 3.9797065}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &436573203
 Prefab:
   m_ObjectHideFlags: 0
@@ -186,7 +145,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4937912513674672, guid: a595152e461bb1e4eacf52dc1d3d19d1, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114227815826069026, guid: a595152e461bb1e4eacf52dc1d3d19d1,
         type: 2}
@@ -582,6 +541,52 @@ Transform:
   m_PrefabParentObject: {fileID: 4012863367321050, guid: 23ddd128ff8fc4d4aa6282fa6ba838fc,
     type: 2}
   m_PrefabInternal: {fileID: 1789768204}
+--- !u!1001 &2015954300
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4584259096646586, guid: 88e7966401d88e04aa518b9e9687806e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584259096646586, guid: 88e7966401d88e04aa518b9e9687806e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584259096646586, guid: 88e7966401d88e04aa518b9e9687806e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 88.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584259096646586, guid: 88e7966401d88e04aa518b9e9687806e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584259096646586, guid: 88e7966401d88e04aa518b9e9687806e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584259096646586, guid: 88e7966401d88e04aa518b9e9687806e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584259096646586, guid: 88e7966401d88e04aa518b9e9687806e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584259096646586, guid: 88e7966401d88e04aa518b9e9687806e, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1857767050917114, guid: 88e7966401d88e04aa518b9e9687806e, type: 2}
+      propertyPath: m_Name
+      value: "arriv\xE9e (1)"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 88e7966401d88e04aa518b9e9687806e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &2049522908 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4012863367321050, guid: 23ddd128ff8fc4d4aa6282fa6ba838fc,
@@ -613,5 +618,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
