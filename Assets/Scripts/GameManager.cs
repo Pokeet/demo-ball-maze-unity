@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using UnityEngine.UI;
+
 public class GameManager : MonoBehaviour {
 
     public GameObject sphere;
@@ -12,10 +14,16 @@ public class GameManager : MonoBehaviour {
 
     public float deathY = -500;
 
+    public Text chronoText;
+
     private SphereControls sphereControls;
     private CameraFollow cameraFollow;
 
     private GameObject currentSphere;
+
+    private float time = 0;
+
+    private bool goalReached = false;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +34,8 @@ public class GameManager : MonoBehaviour {
 
     void SpawnSphere ()
     {
+        time = 0;
+
         currentSphere = Instantiate(sphere);
         currentSphere.transform.position = spawnPoint.position;
 
@@ -37,6 +47,18 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (!goalReached)
+        {
+            time += Time.deltaTime;
+        }
+
+        int cents = Mathf.RoundToInt(time * 100) % 100;
+        int seconds = Mathf.FloorToInt(time);
+        int minutes = Mathf.FloorToInt(time / 60);
+
+        chronoText.text = "Chrono : " + minutes + ":" + seconds + ":" + cents;
+
         if (currentSphere.transform.position.y < -100)
         {
             Destroy(currentSphere);
@@ -47,6 +69,8 @@ public class GameManager : MonoBehaviour {
     void OnSphereReachGoal()
     {
         cameraFollow.StopFollow();
+
+        goalReached = true;
 
         Invoke("LoadNextLevel", 2);
     }
