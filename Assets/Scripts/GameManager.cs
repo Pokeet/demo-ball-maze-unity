@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
+    public static GameManager Instance;
+
     public GameObject sphere;
     public GameObject mainCamera;
 
@@ -25,8 +27,13 @@ public class GameManager : MonoBehaviour {
 
     private bool goalReached = false;
 
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    // Use this for initialization
+    void Start () {
         cameraFollow = mainCamera.GetComponent<CameraFollow>();
 
         SpawnSphere();
@@ -86,6 +93,11 @@ public class GameManager : MonoBehaviour {
         {
             SceneManager.LoadScene(nextSceneIndex);
         }
+    }
+
+    public void OnPickPickable()
+    {
+        time -= 2;
     }
 
 }
